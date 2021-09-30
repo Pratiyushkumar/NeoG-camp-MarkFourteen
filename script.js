@@ -16,18 +16,14 @@ function getProfitLossOfStocks(initial, stocks, current) {
     if (initial > current) {
       let loss = (initial - current) * stocks;
       let lossPercentage = (loss / initial) * 100;
-      output.innerText = `Oops! you are in loss ${loss} by ${lossPercentage.toPrecision(
-        4
-      )}%`;
+      output.innerText = `Oops! you are in loss ${loss} by ${lossPercentage.toFixed()}%`;
       output.style.color = "red";
 
       console.log(loss, lossPercentage);
     } else if (current > initial) {
       let gain = (current - initial) * stocks;
       let gainPercentage = (gain / initial) * 100;
-      output.innerText = `yayy! you are in gain ${gain} by ${gainPercentage.toPrecision(
-        4
-      )}%`;
+      output.innerText = `yayy! you are in gain ${gain} by ${gainPercentage.toFixed()}%`;
       output.style.color = "green";
       console.log(gain, gainPercentage);
     } else {
