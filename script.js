@@ -38,5 +38,6 @@ function getProfitLossOfStocks(initial, stocks, current) {
   } else {
     output.innerText = "Please enter the Value";
     output.style.color = "red";
+    alert("Enter the correct Values");
   }
 }
