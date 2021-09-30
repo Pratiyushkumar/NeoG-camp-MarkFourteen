@@ -5,14 +5,18 @@ const btnClicked = document.querySelector("#btn-output");
 const output = document.querySelector(".output");
 
 btnClicked.addEventListener("click", () => {
+  if (intialPrice !== "" || stocksQuantity !== "" || currentPrice !== "") {
+    getProfitLossOfStocks(intialPrice, stocksQuantity, currentPrice);
+  } else {
+    alert("Enter the correct value");
+  }
+});
+
+function getProfitLossOfStocks(intialPrice, stocksQuantity, currentPrice) {
   let initial = intialPrice.value;
   let stocks = stocksQuantity.value;
   let current = currentPrice.value;
-  getProfitLossOfStocks(initial, stocks, current);
-});
-
-function getProfitLossOfStocks(initial, stocks, current) {
-  if (initial !== "" || stocks !== "" || current !== "") {
+  if (initial > 0 || stocks > 0 || current > 0) {
     if (initial > current) {
       let loss = (initial - current) * stocks;
       let lossPercentage = (loss / initial) * 100;
